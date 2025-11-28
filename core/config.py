@@ -35,6 +35,14 @@ class Settings(BaseSettings):
     # Database
     DATABASE_URL: str
 
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def convert_database_url(cls, v: str) -> str:
+        """Convert postgresql:// to postgresql+asyncpg:// for async support."""
+        if v and v.startswith("postgresql://"):
+            return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return v
+
     # Worker settings
     PARSE_INTERVAL_HOURS: int = 2
     REQUEST_DELAY_SEC: float = 1.5
