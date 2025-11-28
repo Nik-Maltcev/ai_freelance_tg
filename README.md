@@ -197,37 +197,98 @@ settings:
 
 ## Deployment on Railway
 
-### Quick Start
+### Пошаговая инструкция
 
-1. Fork this repository on GitHub
-2. Go to https://railway.app
-3. Create a new project
-4. Connect your GitHub repository
-5. Add PostgreSQL plugin
-6. Set environment variables in Railway dashboard
-7. Deploy!
+#### Шаг 1: Подготовка учётных данных
 
-### Environment Variables on Railway
+Перед деплоем тебе нужно получить:
 
-Set these in the Railway dashboard:
+1. **Telegram Bot Token** — от @BotFather в Telegram
+2. **Telegram API ID и Hash** — на https://my.telegram.org/apps
+3. **Gemini API Key** — на https://aistudio.google.com/app/apikeys
+4. **Твой Telegram ID** — узнать можно у бота @userinfobot
 
-- `BOT_TOKEN` - Your Telegram bot token
-- `ADMIN_IDS` - Comma-separated admin user IDs
-- `TELEGRAM_API_ID` - Your Telegram API ID
-- `TELEGRAM_API_HASH` - Your Telegram API hash
-- `TELEGRAM_PHONE` - Your Telegram phone number
-- `GEMINI_API_KEY` - Your Google Gemini API key
-- `DATABASE_URL` - Will be auto-set by Railway PostgreSQL plugin
+#### Шаг 2: Создание проекта на Railway
 
-### Deploying Worker on Railway
+1. Зайди на https://railway.app и авторизуйся через GitHub
+2. Нажми **"New Project"**
+3. Выбери **"Deploy from GitHub repo"**
+4. Найди и выбери репозиторий `ai_freelance_tg`
+5. Railway автоматически создаст первый сервис (это будет Bot)
 
-The `railway.json` is configured for the bot. To deploy the worker:
+#### Шаг 3: Добавление базы данных PostgreSQL
 
-1. Create a second Railway project
-2. Connect the same GitHub repository
-3. Override the start command: `python -m worker.main`
-4. Set the same environment variables
-5. Deploy!
+1. В проекте нажми **"New"** → **"Database"** → **"Add PostgreSQL"**
+2. Railway создаст базу данных и переменную `DATABASE_URL`
+
+#### Шаг 4: Настройка сервиса Bot
+
+1. Кликни на сервис, созданный из репозитория
+2. Перейди во вкладку **"Variables"**
+3. Добавь переменные:
+   ```
+   BOT_TOKEN=твой_токен_от_BotFather
+   ADMIN_IDS=твой_telegram_id
+   GEMINI_API_KEY=твой_ключ_gemini
+   DATABASE_URL=${{Postgres.DATABASE_URL}}
+   ```
+4. Во вкладке **"Settings"** проверь:
+   - Build Command: оставь пустым (используется Dockerfile)
+   - Dockerfile Path: `Dockerfile.bot`
+
+#### Шаг 5: Создание сервиса Worker
+
+1. В проекте нажми **"New"** → **"GitHub Repo"**
+2. Выбери тот же репозиторий `ai_freelance_tg`
+3. Переименуй сервис в "Worker" (клик на название → Edit)
+4. Перейди во вкладку **"Variables"** и добавь:
+   ```
+   TELEGRAM_API_ID=твой_api_id
+   TELEGRAM_API_HASH=твой_api_hash
+   TELEGRAM_PHONE=+79001234567
+   GEMINI_API_KEY=твой_ключ_gemini
+   DATABASE_URL=${{Postgres.DATABASE_URL}}
+   ```
+5. Во вкладке **"Settings"**:
+   - Dockerfile Path: `Dockerfile.worker`
+   - Start Command: `python -m worker.main`
+
+#### Шаг 6: Деплой
+
+1. Оба сервиса должны автоматически начать деплой
+2. Следи за логами во вкладке **"Deployments"**
+3. Если всё ок — бот заработает в Telegram!
+
+### Проверка работы
+
+1. Напиши боту `/start` в Telegram
+2. Админ-команды: `/status`, `/parse`, `/stats`
+
+### Возможные проблемы
+
+**Bot не отвечает:**
+- Проверь `BOT_TOKEN` в переменных
+- Посмотри логи в Railway
+
+**Worker падает:**
+- Проверь `TELEGRAM_API_ID`, `TELEGRAM_API_HASH`, `TELEGRAM_PHONE`
+- При первом запуске Telethon может запросить код подтверждения — это нужно делать локально
+
+**Ошибка базы данных:**
+- Убедись что `DATABASE_URL` ссылается на `${{Postgres.DATABASE_URL}}`
+
+### Важно: Первый запуск Telethon
+
+Telethon требует авторизации при первом запуске. Рекомендую:
+
+1. Сначала запустить worker локально:
+   ```bash
+   python -m worker.main
+   ```
+2. Ввести код подтверждения из Telegram
+3. Скопировать файл `*.session` в репозиторий
+4. Добавить его в Git и запушить
+5. После этого деплоить на Railway
 
 ## Testing
 
