@@ -1,0 +1,40 @@
+# Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Testing
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Telethon session
+*.session
+*.session-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kiro
+.kiro/

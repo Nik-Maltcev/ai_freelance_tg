@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: freelance-parser-db
+    environment:
+      POSTGRES_USER: ${DB_USER:-parser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-parser_password}
+      POSTGRES_DB: ${DB_NAME:-freelance_parser}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-parser}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - freelance-parser-network
+
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.bot
+    container_name: freelance-parser-bot
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      ADMIN_IDS: ${ADMIN_IDS}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      DATABASE_URL: postgresql+asyncpg://${DB_USER:-parser}:${DB_PASSWORD:-parser_password}@postgres:5432/${DB_NAME:-freelance_parser}
+      PARSE_INTERVAL_HOURS: ${PARSE_INTERVAL_HOURS:-2}
+      MESSAGES_TTL_DAYS: ${MESSAGES_TTL_DAYS:-30}
+      BATCH_SIZE: ${BATCH_SIZE:-50}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - freelance-parser-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: freelance-parser-worker
+    environment:
+      TELEGRAM_API_ID: ${TELEGRAM_API_ID}
+      TELEGRAM_API_HASH: ${TELEGRAM_API_HASH}
+      TELEGRAM_PHONE: ${TELEGRAM_PHONE}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      DATABASE_URL: postgresql+asyncpg://${DB_USER:-parser}:${DB_PASSWORD:-parser_password}@postgres:5432/${DB_NAME:-freelance_parser}
+      PARSE_INTERVAL_HOURS: ${PARSE_INTERVAL_HOURS:-2}
+      MESSAGES_TTL_DAYS: ${MESSAGES_TTL_DAYS:-30}
+      BATCH_SIZE: ${BATCH_SIZE:-50}
+      REQUEST_DELAY_SEC: ${REQUEST_DELAY_SEC:-1.5}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - freelance-parser-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  freelance-parser-network:
+    driver: bridge

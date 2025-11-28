@@ -1,0 +1,61 @@
+# Freelance Parser Bot Configuration
+# This file defines categories and their associated Telegram chats for parsing
+
+settings:
+  # Interval in hours between parsing jobs
+  parse_interval_hours: 2
+  
+  # Time-to-live in days for cached requests
+  ttl_days: 30
+  
+  # Batch size for Gemini API analysis
+  batch_size: 50
+  
+  # Delay in seconds between parsing different chats (to prevent rate limiting)
+  request_delay_sec: 1.5
+
+categories:
+  web_dev:
+    name: "Web Development"
+    description: "Frontend, backend, full-stack web development projects"
+    chats:
+      - "@freelance_web_dev"
+      - "@web_projects"
+      - "@frontend_jobs"
+      - "@backend_jobs"
+  
+  mobile:
+    name: "Mobile Development"
+    description: "iOS, Android, React Native, Flutter projects"
+    chats:
+      - "@mobile_dev_jobs"
+      - "@ios_development"
+      - "@android_projects"
+      - "@flutter_freelance"
+  
+  design:
+    name: "Design"
+    description: "UI/UX, graphic design, web design projects"
+    chats:
+      - "@design_jobs"
+      - "@ui_ux_freelance"
+      - "@graphic_design_work"
+      - "@web_design_projects"
+  
+  copywriting:
+    name: "Copywriting"
+    description: "Content writing, copywriting, technical writing projects"
+    chats:
+      - "@copywriting_jobs"
+      - "@content_writers"
+      - "@technical_writing"
+      - "@blog_writing_work"
+  
+  marketing:
+    name: "Marketing"
+    description: "Digital marketing, SEO, social media, marketing strategy"
+    chats:
+      - "@marketing_jobs"
+      - "@seo_freelance"
+      - "@social_media_work"
+      - "@digital_marketing_projects"
