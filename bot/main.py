@@ -42,7 +42,8 @@ async def setup_database(settings) -> async_sessionmaker:
     )
     
     # Initialize database tables
-    await init_db(engine)
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
     
     # Create session factory
     async_session_factory = async_sessionmaker(
