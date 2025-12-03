@@ -104,18 +104,28 @@ async def main():
     # Register middlewares
     dp.message.middleware(WhitelistMiddleware())
     
+    # Session middleware to inject database session into handlers
+    from aiogram import BaseMiddleware
+    from typing import Callable, Dict, Any, Awaitable
+    from aiogram.types import TelegramObject
+    
+    class SessionMiddleware(BaseMiddleware):
+        async def __call__(
+            self,
+            handler: Callable[[TelegramObject, Dict[str, Any]], Awaitable[Any]],
+            event: TelegramObject,
+            data: Dict[str, Any],
+        ) -> Any:
+            async with session_factory() as session:
+                data["session"] = session
+                return await handler(event, data)
+    
+    dp.update.middleware(SessionMiddleware())
+    
     # Register routers
     dp.include_router(start.router)
     dp.include_router(requests.router)
     dp.include_router(admin.router)
-    
-    # Middleware to inject session into handlers
-    @dp.middleware()
-    async def session_middleware(handler, event, data):
-        """Inject database session into handler data."""
-        async with session_factory() as session:
-            data["session"] = session
-            return await handler(event, data)
     
     # Start polling
     logger.info("Bot started, polling for updates...")
