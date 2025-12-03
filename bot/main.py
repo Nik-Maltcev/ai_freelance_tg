@@ -87,6 +87,15 @@ async def main():
     # Get settings
     settings = get_settings()
     
+    # Debug: log DATABASE_URL (masked)
+    db_url = settings.DATABASE_URL
+    if db_url:
+        # Mask password in URL for logging
+        masked_url = db_url[:30] + "..." if len(db_url) > 30 else db_url
+        logger.info(f"DATABASE_URL starts with: {masked_url}")
+    else:
+        logger.error("DATABASE_URL is empty or not set!")
+    
     # Setup database
     logger.info("Setting up database...")
     session_factory = await setup_database(settings)
