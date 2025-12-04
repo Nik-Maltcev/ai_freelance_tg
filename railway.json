@@ -6,6 +6,7 @@
   },
   "deploy": {
     "numReplicas": 1,
+    "startCommand": "python -m bot.main",
     "restartPolicyMaxRetries": 10
   }
 }
