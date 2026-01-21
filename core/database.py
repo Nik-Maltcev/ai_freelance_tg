@@ -54,13 +54,16 @@ def get_async_session() -> async_sessionmaker[AsyncSession]:
     return _async_session
 
 
-async def init_db() -> None:
+async def init_db(drop_existing: bool = False) -> None:
     """Initialize the database by creating all tables.
 
-    Creates all tables defined in the models if they don't exist.
+    Args:
+        drop_existing: If True, drops all tables first (use for schema changes).
     """
     engine = get_async_engine()
     async with engine.begin() as conn:
+        if drop_existing:
+            await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)
 
 

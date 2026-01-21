@@ -34,10 +34,10 @@ async def main() -> None:
         logger.error(f"Configuration error: {e}")
         sys.exit(1)
     
-    # Initialize database
+    # Initialize database (drop old tables to update schema)
     try:
-        await init_db()
-        logger.info("Database initialized")
+        await init_db(drop_existing=True)
+        logger.info("Database initialized (schema updated)")
     except Exception as e:
         logger.error(f"Database initialization failed: {e}")
         sys.exit(1)
