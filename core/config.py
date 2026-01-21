@@ -20,8 +20,8 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # Telegram Bot
-    BOT_TOKEN: str
+    # Telegram Bot (optional for worker)
+    BOT_TOKEN: str = ""
     ADMIN_IDS: list[int] = []
 
     # Telegram Userbot (Telethon)
