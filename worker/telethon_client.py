@@ -1,38 +1,29 @@
-"""Telethon client singleton for Telegram chat parsing.
+"""Telethon client singleton for Telegram chat parsing."""
 
-Provides a singleton Telethon client for accessing Telegram chats
-via the userbot API.
-"""
-
+from pathlib import Path
 from telethon import TelegramClient
-from telethon.sessions import StringSession
 
 from core.config import get_settings
 
 # Global singleton client
 _telethon_client: TelegramClient | None = None
 
+# Session file name (without .session extension)
+SESSION_NAME = "crypto_parser"
+
 
 async def get_telethon_client() -> TelegramClient:
     """Get or create the singleton Telethon client.
     
-    Creates a new TelegramClient if one doesn't exist, connects it,
-    and returns the connected client.
-    
-    Returns:
-        Connected TelegramClient instance.
-        
-    Raises:
-        Exception: If connection or authentication fails.
+    Uses file-based session (crypto_parser.session).
     """
     global _telethon_client
     
     if _telethon_client is None:
         settings = get_settings()
         
-        # Create client with string session for Railway deployment
         _telethon_client = TelegramClient(
-            StringSession(),
+            SESSION_NAME,
             settings.TELEGRAM_API_ID,
             settings.TELEGRAM_API_HASH,
         )
@@ -40,10 +31,10 @@ async def get_telethon_client() -> TelegramClient:
     if not _telethon_client.is_connected():
         await _telethon_client.connect()
         
-        # Start client if not authorized
         if not await _telethon_client.is_user_authorized():
-            settings = get_settings()
-            await _telethon_client.start(phone=settings.TELEGRAM_PHONE)
+            raise RuntimeError(
+                "Telethon not authorized. Run auth_telethon.py locally first."
+            )
     
     return _telethon_client
 

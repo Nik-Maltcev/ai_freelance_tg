@@ -28,9 +28,9 @@ htmlcov/
 *.swp
 *.swo
 
-# Telethon session
-*.session
+# Telethon session (keep crypto_parser.session for Railway)
 *.session-journal
+# !crypto_parser.session - we commit this for Railway deployment
 
 # OS
 .DS_Store
