@@ -1,0 +1,820 @@
+2025-11-28T17:54:21.000000000Z [inf]  Starting Container
+2025-11-28T17:54:26.347164721Z [err]  2025-11-28 17:54:25,327 - __main__ - INFO - Setting up database...
+2025-11-28T17:54:26.347170485Z [err]  Traceback (most recent call last):
+2025-11-28T17:54:26.347177254Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:54:26.347184577Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:54:26.347191567Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:54:26.347198176Z [err]      asyncio.run(main())
+2025-11-28T17:54:26.347205084Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:54:26.347211999Z [err]      return runner.run(main)
+2025-11-28T17:54:26.347218733Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347225520Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:54:26.347232697Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:54:26.347239420Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347246044Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:54:26.347253195Z [err]      return future.result()
+2025-11-28T17:54:26.347261360Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347263119Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:54:26.347269262Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:54:26.347275935Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:54:26.347296997Z [err]      raise exc.ArgumentError(
+2025-11-28T17:54:26.347307236Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:54:26.347387006Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:54:26.347396439Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:54:26.347405195Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347531294Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347538445Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:54:26.347545307Z [err]      engine = create_async_engine(
+2025-11-28T17:54:26.347557740Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347565599Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:54:26.347573364Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:54:26.347581993Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347589333Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:54:26.347596931Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:54:26.347604848Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:54:26.347611459Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:26.347618591Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:54:26.347625824Z [err]      u = _url.make_url(url)
+2025-11-28T17:54:26.347632778Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.489375282Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.489386143Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:54:31.489410036Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:54:31.489416555Z [err]      return runner.run(main)
+2025-11-28T17:54:31.489422833Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.489428432Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:54:31.489436470Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:54:31.489443615Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.489451904Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:54:31.489460401Z [err]  2025-11-28 17:54:31,055 - __main__ - INFO - Setting up database...
+2025-11-28T17:54:31.489462328Z [err]      return future.result()
+2025-11-28T17:54:31.489467931Z [err]  Traceback (most recent call last):
+2025-11-28T17:54:31.489481222Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:54:31.489488667Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:54:31.489495167Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:54:31.489503245Z [err]      asyncio.run(main())
+2025-11-28T17:54:31.494414637Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:54:31.494422317Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.494422422Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.494428149Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:54:31.494432011Z [err]  ^^^^
+2025-11-28T17:54:31.494434151Z [err]      u = _url.make_url(url)
+2025-11-28T17:54:31.494438980Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:54:31.494442760Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.494444795Z [err]      engine = create_async_engine(
+2025-11-28T17:54:31.494448945Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:54:31.494451997Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.494454850Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:54:31.494459145Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:54:31.494464163Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.494464888Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:54:31.494470996Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:54:31.494472687Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:31.494478271Z [err]      raise exc.ArgumentError(
+2025-11-28T17:54:31.494479313Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:54:31.494485493Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:54:31.494485883Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:54:31.494493291Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:54:37.652680441Z [err]  2025-11-28 17:54:36,920 - __main__ - INFO - Setting up database...
+2025-11-28T17:54:37.652689391Z [err]  Traceback (most recent call last):
+2025-11-28T17:54:37.652697261Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:54:37.652705793Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:54:37.652715161Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:54:37.652723141Z [err]      asyncio.run(main())
+2025-11-28T17:54:37.652732996Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:54:37.652746913Z [err]      return runner.run(main)
+2025-11-28T17:54:37.652755981Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.652767784Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:54:37.652775923Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:54:37.652782835Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.652789882Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:54:37.652797638Z [err]      return future.result()
+2025-11-28T17:54:37.652805744Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.652814590Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:54:37.652822040Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:54:37.658255892Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.658264793Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:54:37.658273960Z [err]      engine = create_async_engine(
+2025-11-28T17:54:37.658282432Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.658290387Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:54:37.658299480Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:54:37.658307836Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.658320230Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:54:37.658328330Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:54:37.658336867Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:54:37.658345394Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.658357669Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:54:37.658366364Z [err]      u = _url.make_url(url)
+2025-11-28T17:54:37.658472314Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.658484927Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:54:37.658491630Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:54:37.658497785Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:37.658503275Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:54:37.658515770Z [err]      raise exc.ArgumentError(
+2025-11-28T17:54:37.658521394Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:54:44.721218866Z [err]  2025-11-28 17:54:44,462 - __main__ - INFO - Setting up database...
+2025-11-28T17:54:44.721224942Z [err]  Traceback (most recent call last):
+2025-11-28T17:54:44.721243662Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:54:44.721251407Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:54:44.721258826Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:54:44.721265530Z [err]      asyncio.run(main())
+2025-11-28T17:54:44.721272037Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:54:44.721277813Z [err]      return runner.run(main)
+2025-11-28T17:54:44.721284559Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.721291442Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:54:44.721298198Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:54:44.721306259Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.721320888Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:54:44.721328470Z [err]      return future.result()
+2025-11-28T17:54:44.734260959Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734267224Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:54:44.734273547Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:54:44.734280010Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734286689Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:54:44.734293396Z [err]      engine = create_async_engine(
+2025-11-28T17:54:44.734302480Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734310291Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:54:44.734317534Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:54:44.734324301Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734330810Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:54:44.734337090Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:54:44.734598271Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:54:44.734603566Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734616050Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:54:44.734622799Z [err]      u = _url.make_url(url)
+2025-11-28T17:54:44.734629418Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734635959Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:54:44.734642812Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:54:44.734648641Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:54:44.734656092Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:54:44.734663836Z [err]      raise exc.ArgumentError(
+2025-11-28T17:54:44.734670943Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:04.903299180Z [err]  2025-11-28 17:55:00,422 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:04.903306823Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:04.903314259Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:04.903322100Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:04.903329461Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:04.903338278Z [err]      asyncio.run(main())
+2025-11-28T17:55:04.903345119Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:04.903352813Z [err]      return runner.run(main)
+2025-11-28T17:55:04.903361044Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.903368653Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:04.903375613Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:04.903383261Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.903390169Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:04.903397100Z [err]      return future.result()
+2025-11-28T17:55:04.903404976Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.903411501Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:04.903419643Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:04.903424825Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.903431610Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:04.903439018Z [err]      engine = create_async_engine(
+2025-11-28T17:55:04.908108189Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.908116172Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:04.908123443Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:04.908131564Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.908139503Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:04.908145448Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:04.908151225Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:04.908160475Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.908167534Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:04.908175204Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:04.908182583Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.908195045Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:55:04.908204206Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:04.908213529Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:04.908220875Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:04.908228220Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:04.908234866Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:06.877205032Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.877216371Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:06.877235044Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:06.877247403Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.877256032Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:06.877256131Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:06.877264582Z [err]      return future.result()
+2025-11-28T17:55:06.877268312Z [err]  2025-11-28 17:55:06,281 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:06.877272181Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:06.877272731Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.877281084Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:06.877282424Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:06.877289949Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:06.877291345Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:06.877300613Z [err]      asyncio.run(main())
+2025-11-28T17:55:06.877308353Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:06.877316049Z [err]      return runner.run(main)
+2025-11-28T17:55:06.923277289Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.923282478Z [err]  ^^^^^^^
+2025-11-28T17:55:06.923288706Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:06.923294340Z [err]      engine = create_async_engine(
+2025-11-28T17:55:06.923299942Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.923306067Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:06.923310166Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:06.923315129Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.923321022Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:06.923326721Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:06.923332823Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:06.923338465Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.923343792Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:06.923349243Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:06.923530274Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.923538183Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:55:06.923546219Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:06.923554099Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:06.923560436Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:06.923566518Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:06.923596926Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:13.341624650Z [err]  2025-11-28 17:55:12,669 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:13.341632853Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:13.341641915Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:13.341652236Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:13.341661378Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:13.341668455Z [err]      asyncio.run(main())
+2025-11-28T17:55:13.341684969Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:13.341692555Z [err]      return runner.run(main)
+2025-11-28T17:55:13.341698738Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:13.341705690Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:13.341711128Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:13.341717491Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:13.341723492Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:13.341729045Z [err]      return future.result()
+2025-11-28T17:55:13.341737102Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.274955292Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:14.274989717Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:14.274998227Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:14.275006048Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.275014503Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:14.275025336Z [err]      engine = create_async_engine(
+2025-11-28T17:55:14.275034428Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.275042496Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:14.275052719Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:14.275061283Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.275068923Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:14.275077452Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:14.282782215Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.282790271Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:14.282799158Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:14.282808268Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.282829883Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:55:14.282838196Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:14.282846503Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:14.282855318Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:14.282961448Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:14.282970473Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:18.278994828Z [err]  2025-11-28 17:55:18,273 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:18.279001056Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:18.279006939Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:18.279012617Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:18.279019197Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:18.279025400Z [err]      asyncio.run(main())
+2025-11-28T17:55:18.279031423Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:18.279036933Z [err]      return runner.run(main)
+2025-11-28T17:55:18.279042479Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.279048527Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:18.279054958Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:18.279069575Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.279077335Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:18.279083371Z [err]      return future.result()
+2025-11-28T17:55:18.279089220Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.281959233Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:18.281967074Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:18.281976488Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.281983957Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:18.281991661Z [err]      engine = create_async_engine(
+2025-11-28T17:55:18.281999816Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.282007781Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:18.282015062Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:18.282022011Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.282030420Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:18.282037536Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:18.282044631Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:18.283749956Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.283763349Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:18.283770656Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:18.283776952Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.283783330Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:55:18.283790185Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:18.283795279Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:18.283806538Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:18.283814499Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:18.283819999Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:25.216953030Z [err]  2025-11-28 17:55:24,733 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:25.216960927Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:25.216969292Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:25.216975138Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:25.216983105Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:25.216989736Z [err]      asyncio.run(main())
+2025-11-28T17:55:25.217002847Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:25.217009552Z [err]      return runner.run(main)
+2025-11-28T17:55:25.217017415Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.217027975Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:25.217034726Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:25.217041690Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.217048465Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:25.217060123Z [err]      return future.result()
+2025-11-28T17:55:25.217067572Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.217074375Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:25.217080462Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:25.217088323Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.217096296Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:25.221125487Z [err]      engine = create_async_engine(
+2025-11-28T17:55:25.221132505Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.221140302Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:25.221147403Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:25.221154334Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.221162311Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:25.221168398Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:25.221175003Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:25.221181938Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.221190433Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:25.221197507Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:25.221205204Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.221213064Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:55:25.221220538Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:25.224387852Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:25.224396631Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:25.224404305Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:25.224412875Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:31.406338316Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:31.406356224Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:31.406368153Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.406379542Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:31.406388619Z [err]      return future.result()
+2025-11-28T17:55:31.406529371Z [err]  2025-11-28 17:55:30,932 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:31.406540084Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:31.406550161Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:31.406560667Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:31.406572884Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:31.406583995Z [err]      asyncio.run(main())
+2025-11-28T17:55:31.406601892Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:31.406612930Z [err]      return runner.run(main)
+2025-11-28T17:55:31.406625259Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412637765Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412652558Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:31.412661321Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:31.412668715Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412675587Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:31.412683342Z [err]      engine = create_async_engine(
+2025-11-28T17:55:31.412898403Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412906612Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:31.412914040Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:31.412921589Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412929769Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:31.412938058Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:31.412944672Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:31.412952569Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412959758Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:31.412968152Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:31.412977076Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.412985061Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-11-28T17:55:31.413466609Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:31.413472575Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:31.413477795Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:31.413484506Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:31.413489872Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:37.141198025Z [err]  2025-11-28 17:55:36,825 - __main__ - INFO - Setting up database...
+2025-11-28T17:55:37.141205275Z [err]  Traceback (most recent call last):
+2025-11-28T17:55:37.141212081Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T17:55:37.141224607Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T17:55:37.141665137Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T17:55:37.141693222Z [err]      asyncio.run(main())
+2025-11-28T17:55:37.141700018Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T17:55:37.141706415Z [err]      return runner.run(main)
+2025-11-28T17:55:37.141713401Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.141720919Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T17:55:37.141727637Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T17:55:37.141733969Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.141740832Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T17:55:37.141752009Z [err]      return future.result()
+2025-11-28T17:55:37.141758388Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.141764916Z [err]    File "/app/bot/main.py", line 91, in main
+2025-11-28T17:55:37.141771451Z [err]      session_factory = await setup_database(settings)
+2025-11-28T17:55:37.143043706Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.143049648Z [err]  ^^^^^
+2025-11-28T17:55:37.143054310Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-11-28T17:55:37.143058295Z [err]      engine = create_async_engine(
+2025-11-28T17:55:37.143063764Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.143068091Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-11-28T17:55:37.143072106Z [err]      sync_engine = _create_engine(url, **kw)
+2025-11-28T17:55:37.143076236Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.143080522Z [err]    File "<string>", line 2, in create_engine
+2025-11-28T17:55:37.143085462Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-11-28T17:55:37.143090613Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-11-28T17:55:37.143095935Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.144648491Z [err]      raise exc.ArgumentError(
+2025-11-28T17:55:37.144657894Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-11-28T17:55:37.144663441Z [err]      return _parse_url(name_or_url)
+2025-11-28T17:55:37.144672271Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.144681235Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-11-28T17:55:37.144737703Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-11-28T17:55:37.144745449Z [err]      u = _url.make_url(url)
+2025-11-28T17:55:37.144756252Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-11-28T17:55:37.144763828Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:42:56.187084922Z [err]  2025-12-02 19:42:54,143 - __main__ - INFO - Setting up database...
+2025-12-02T19:42:56.187101015Z [err]  Traceback (most recent call last):
+2025-12-02T19:42:56.187110087Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:42:56.187117074Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:42:56.187123253Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:42:56.187129967Z [err]      asyncio.run(main())
+2025-12-02T19:42:56.187135897Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:42:56.187143555Z [err]      return runner.run(main)
+2025-12-02T19:42:56.187149308Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.187158159Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:42:56.187164704Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:42:56.187171739Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.187177849Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:42:56.187183904Z [err]      return future.result()
+2025-12-02T19:42:56.190045492Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.190058069Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:42:56.190064662Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:42:56.190070138Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.190076114Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:42:56.190082187Z [err]      engine = create_async_engine(
+2025-12-02T19:42:56.190092427Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.190102818Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:42:56.190109687Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:42:56.190115207Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.190121197Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:42:56.190127736Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:42:56.190133840Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:42:56.193532287Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.193559391Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:42:56.193572749Z [err]      u = _url.make_url(url)
+2025-12-02T19:42:56.193577872Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.193582459Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:42:56.193586515Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:42:56.193615346Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:56.193627476Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:42:56.193633953Z [err]      raise exc.ArgumentError(
+2025-12-02T19:42:56.193639697Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:42:59.445045517Z [err]  2025-12-02 19:42:59,434 - __main__ - INFO - Setting up database...
+2025-12-02T19:42:59.445055520Z [err]  Traceback (most recent call last):
+2025-12-02T19:42:59.445061658Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:42:59.445069625Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:42:59.445077878Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:42:59.445085405Z [err]      asyncio.run(main())
+2025-12-02T19:42:59.445092271Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:42:59.445098933Z [err]      return runner.run(main)
+2025-12-02T19:42:59.445105608Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.445113038Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:42:59.445119764Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:42:59.445127401Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.445134593Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:42:59.445142094Z [err]      return future.result()
+2025-12-02T19:42:59.445148114Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.445155184Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:42:59.445161518Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:42:59.447814361Z [err]                        ^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.447827473Z [err]  ^^^^^^^^^^^^^
+2025-12-02T19:42:59.447835259Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:42:59.447841874Z [err]      engine = create_async_engine(
+2025-12-02T19:42:59.447851525Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.447858884Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:42:59.447866668Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:42:59.447873268Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.447879213Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:42:59.447885616Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:42:59.447891408Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:42:59.447898409Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.451305067Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:42:59.451315590Z [err]      u = _url.make_url(url)
+2025-12-02T19:42:59.451321570Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.451328994Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:42:59.451336952Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:42:59.451344908Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:42:59.451352799Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:42:59.451360163Z [err]      raise exc.ArgumentError(
+2025-12-02T19:42:59.451368813Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:05.241068296Z [err]  2025-12-02 19:43:04,890 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:05.241074740Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:05.241080237Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:05.241089484Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:05.241096453Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:05.241106092Z [err]      asyncio.run(main())
+2025-12-02T19:43:05.241107355Z [err]      return future.result()
+2025-12-02T19:43:05.241116870Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:05.241117295Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.241123798Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:05.241132116Z [err]      return runner.run(main)
+2025-12-02T19:43:05.241133515Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:05.241146237Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.241156405Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:05.241162194Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:05.241169165Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.241176719Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:05.244405458Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.244416527Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:05.244424656Z [err]      engine = create_async_engine(
+2025-12-02T19:43:05.244430337Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.244435934Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:05.244442827Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:05.244448705Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.244454718Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:05.244460871Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:05.244467410Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:05.244473483Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.244479585Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:05.245481308Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:05.245490618Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.245497805Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:05.245504730Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:05.245511432Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:05.245518082Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:05.245525676Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:05.245533284Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:10.661138922Z [err]  2025-12-02 19:43:10,274 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:10.661148574Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:10.661157097Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:10.661164109Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:10.661171708Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:10.661178516Z [err]      asyncio.run(main())
+2025-12-02T19:43:10.661184681Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:10.661190756Z [err]      return runner.run(main)
+2025-12-02T19:43:10.661196994Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.661203715Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:10.661210001Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:10.661215607Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.661221407Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:10.661225998Z [err]      return future.result()
+2025-12-02T19:43:10.661230505Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.661235278Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:10.661240727Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:10.664430389Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.664437087Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:10.664444099Z [err]      engine = create_async_engine(
+2025-12-02T19:43:10.664453217Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.664459690Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:10.664465176Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:10.664472989Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.664480953Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:10.664489021Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:10.664496303Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:10.664503570Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.664509904Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:10.664515614Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:10.666156782Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.666163543Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:10.666168179Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:10.666172963Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:10.666179163Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:10.666186380Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:10.666192607Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:16.811422350Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.811432488Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:16.811440042Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:16.811443898Z [err]      asyncio.run(main())
+2025-12-02T19:43:16.811450007Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:16.811451833Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:16.811457900Z [err]      return runner.run(main)
+2025-12-02T19:43:16.811469123Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.811509810Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:16.811517817Z [err]      return future.result()
+2025-12-02T19:43:16.811521198Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:16.811526308Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.811528980Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:16.811722828Z [err]  2025-12-02 19:43:16,177 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:16.811728494Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:16.811734103Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:16.811739859Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:16.943211346Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.943223407Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:16.943232488Z [err]      engine = create_async_engine(
+2025-12-02T19:43:16.943241264Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.943249467Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:16.943257887Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:16.943265018Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.943272542Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:16.943280555Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:16.943288961Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:16.943296191Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.943484404Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:16.943491110Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:16.943498870Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.943506008Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:16.943515685Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:16.943523626Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:16.943533718Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:16.943541163Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:16.943548164Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:21.175860216Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:21.175873423Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.175905989Z [err]  2025-12-02 19:43:21,171 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:21.175912897Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:21.175920397Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:21.175930268Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:21.175936452Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:21.175943892Z [err]      asyncio.run(main())
+2025-12-02T19:43:21.175953414Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:21.175961262Z [err]      return runner.run(main)
+2025-12-02T19:43:21.175967261Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.175975403Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:21.175982333Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:21.175989229Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.175996713Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:21.176003433Z [err]      return future.result()
+2025-12-02T19:43:21.176011164Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.176021596Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:21.178360303Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:21.178369110Z [err]      engine = create_async_engine(
+2025-12-02T19:43:21.178375530Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.178382463Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:21.178388177Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:21.178392864Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.178404801Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:21.178409678Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:21.178414029Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:21.178419111Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.178423849Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:21.178431438Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:21.181092714Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.181101069Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:21.181108062Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:21.181114389Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:21.181120458Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:21.181125427Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:21.181131233Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:26.041140354Z [err]  2025-12-02 19:43:25,860 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:26.041146236Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:26.041158749Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:26.041165301Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:26.041171564Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:26.041178157Z [err]      asyncio.run(main())
+2025-12-02T19:43:26.041184505Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:26.041191640Z [err]      return runner.run(main)
+2025-12-02T19:43:26.041198874Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.041206411Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:26.041214537Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:26.041221967Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.041231246Z [err]  ^^^
+2025-12-02T19:43:26.041238357Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:26.041247238Z [err]      return future.result()
+2025-12-02T19:43:26.041253948Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.041260706Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:26.045275592Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:26.045427435Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:26.045430397Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:26.045435132Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.045442173Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:26.045518984Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:26.045526464Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.045534110Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:26.045541101Z [err]      engine = create_async_engine(
+2025-12-02T19:43:26.045550354Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.045563047Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:26.045570017Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:26.045577477Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.045584321Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:26.045591601Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:26.045598675Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:26.045605019Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.045612262Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:26.045618869Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:26.045625746Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:26.045631853Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:31.039067213Z [err]  2025-12-02 19:43:30,778 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:31.039073816Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:31.039079611Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:31.039085972Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:31.039094032Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:31.039099726Z [err]      asyncio.run(main())
+2025-12-02T19:43:31.039105202Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:31.039109676Z [err]      return runner.run(main)
+2025-12-02T19:43:31.039116411Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.039123091Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:31.039127813Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:31.039133525Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.039139099Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:31.039145927Z [err]      return future.result()
+2025-12-02T19:43:31.039152496Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.039158497Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:31.044862471Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:31.044877364Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.044886479Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:31.044894148Z [err]      engine = create_async_engine(
+2025-12-02T19:43:31.044901659Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.044910492Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:31.044918643Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:31.044927001Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.044934655Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:31.044941881Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:31.045145540Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:31.045153778Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.045161976Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:31.045169722Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:31.045187437Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.045195410Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:31.045202509Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:31.045210853Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:31.045219178Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:31.045227200Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:31.045234636Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:36.066988825Z [err]  2025-12-02 19:43:35,996 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:36.066999799Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:36.067005903Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:36.067012263Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:36.067020545Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:36.067026818Z [err]      asyncio.run(main())
+2025-12-02T19:43:36.067031912Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:36.067037241Z [err]      return runner.run(main)
+2025-12-02T19:43:36.067042915Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.067050090Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:36.067055112Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:36.067062113Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.067070004Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:36.067076576Z [err]      return future.result()
+2025-12-02T19:43:36.067081165Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.067086035Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:36.067090487Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:36.069936445Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.069948739Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:36.069976284Z [err]      engine = create_async_engine(
+2025-12-02T19:43:36.069985332Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.069993018Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:36.070002404Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:36.070010447Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.070019055Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:36.070027906Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:36.070035507Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:36.070041381Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.070048511Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:36.072474571Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:36.072481194Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.072486049Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:36.072491227Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:36.072495727Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:36.072500085Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:36.072505031Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:36.072509920Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:41.548285881Z [err]  2025-12-02 19:43:41,262 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:41.548294163Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:41.548303434Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:41.548313898Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:41.548321700Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:41.548330896Z [err]      asyncio.run(main())
+2025-12-02T19:43:41.548339519Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:41.548348753Z [err]      return runner.run(main)
+2025-12-02T19:43:41.548357353Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.548369261Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:41.548387285Z [err]      return self._loop.run_until_complete(task)
+2025-12-02T19:43:41.548398094Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.548407965Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:41.548418703Z [err]      return future.result()
+2025-12-02T19:43:41.548429099Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.548439006Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:41.548448497Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:41.553194185Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.553204960Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:41.553213857Z [err]      engine = create_async_engine(
+2025-12-02T19:43:41.553220484Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.553227068Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:41.553234451Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:41.553240296Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.553246191Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:41.553252135Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:41.553257665Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:41.553263088Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.553268975Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:41.553410975Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:41.553415913Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.553421049Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:41.553426950Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:41.553432055Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:41.553436850Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:41.553441790Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:41.553448599Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:46.825528916Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825549429Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-12-02T19:43:46.825560111Z [err]      return future.result()
+2025-12-02T19:43:46.825567291Z [err]             ^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825575647Z [err]    File "/app/bot/main.py", line 91, in main
+2025-12-02T19:43:46.825582182Z [err]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825586313Z [err]      session_factory = await setup_database(settings)
+2025-12-02T19:43:46.825595518Z [err]    File "/app/bot/main.py", line 38, in setup_database
+2025-12-02T19:43:46.825604610Z [err]      engine = create_async_engine(
+2025-12-02T19:43:46.825612686Z [err]               ^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825615135Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825619833Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+2025-12-02T19:43:46.825623867Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 922, in _parse_url
+2025-12-02T19:43:46.825628623Z [err]      sync_engine = _create_engine(url, **kw)
+2025-12-02T19:43:46.825636212Z [err]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825642638Z [err]    File "<string>", line 2, in create_engine
+2025-12-02T19:43:46.825658658Z [err]      raise exc.ArgumentError(
+2025-12-02T19:43:46.825669225Z [err]  sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+2025-12-02T19:43:46.825671384Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+2025-12-02T19:43:46.825685743Z [err]      return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2025-12-02T19:43:46.825696195Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825707730Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+2025-12-02T19:43:46.825718282Z [err]      u = _url.make_url(url)
+2025-12-02T19:43:46.825734317Z [err]          ^^^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.825744881Z [err]    File "/root/.local/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+2025-12-02T19:43:46.825756795Z [err]      return _parse_url(name_or_url)
+2025-12-02T19:43:46.826120148Z [err]  2025-12-02 19:43:46,609 - __main__ - INFO - Setting up database...
+2025-12-02T19:43:46.826128245Z [err]  Traceback (most recent call last):
+2025-12-02T19:43:46.826137977Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-12-02T19:43:46.826144302Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-12-02T19:43:46.826151089Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-12-02T19:43:46.826156275Z [err]      asyncio.run(main())
+2025-12-02T19:43:46.826162754Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-12-02T19:43:46.826169227Z [err]      return runner.run(main)
+2025-12-02T19:43:46.826175753Z [err]             ^^^^^^^^^^^^^^^^
+2025-12-02T19:43:46.826183444Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-12-02T19:43:46.826198728Z [err]      return self._loop.run_until_complete(task)

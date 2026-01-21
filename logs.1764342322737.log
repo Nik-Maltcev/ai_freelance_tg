@@ -1,0 +1,949 @@
+2025-11-28T14:57:11.000000000Z [inf]  Starting Container
+2025-11-28T14:57:16.253728073Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:16.253741456Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:16.253781982Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:16.253790675Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:16.253799822Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:16.253808699Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:16.253820555Z [err]  DATABASE_URL
+2025-11-28T14:57:16.253821709Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:16.253824157Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:16.253832044Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:16.253833668Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:16.253840433Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:16.253843971Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:16.253848892Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:16.253854801Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:16.253864589Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:16.254170362Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:16.254177132Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:16.254184094Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:16.254190916Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:16.254199580Z [err]      asyncio.run(main())
+2025-11-28T14:57:16.254206548Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:16.254213584Z [err]      return runner.run(main)
+2025-11-28T14:57:16.254222064Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:16.254230834Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:16.254238500Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:16.254245824Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:16.254253762Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:16.254261315Z [err]      return future.result()
+2025-11-28T14:57:16.254269100Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:16.254277744Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:16.254284922Z [err]      settings = get_settings()
+2025-11-28T14:57:16.254292042Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:16.254491085Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:16.254501507Z [err]      _settings = Settings()
+2025-11-28T14:57:16.254508304Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:16.254515186Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:16.254522667Z [err]      super().__init__(
+2025-11-28T14:57:16.254530514Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:16.254539018Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:16.254545873Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:16.254555907Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:16.254564185Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:16.254572984Z [err]  BOT_TOKEN
+2025-11-28T14:57:16.254581500Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305641342Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:19.305651017Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:19.305662127Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:19.305666875Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:19.305671490Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:19.305682587Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:19.305691113Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:19.305701582Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:19.305709321Z [err]      asyncio.run(main())
+2025-11-28T14:57:19.305716062Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:19.305734568Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:19.305734888Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:19.305739495Z [err]      return runner.run(main)
+2025-11-28T14:57:19.305746140Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:19.305751576Z [err]  BOT_TOKEN
+2025-11-28T14:57:19.305755101Z [err]      _settings = Settings()
+2025-11-28T14:57:19.305758855Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305765097Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:19.305773160Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:19.305791933Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:19.305800982Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:19.305801342Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:19.305802604Z [err]      super().__init__(
+2025-11-28T14:57:19.305811007Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305815112Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:19.305822686Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:19.305833639Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:19.305845354Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:19.305900599Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305901403Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305909675Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:19.305912038Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:19.305914399Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:19.305918918Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:19.305921238Z [err]  DATABASE_URL
+2025-11-28T14:57:19.305928696Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305929697Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:19.305936989Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:19.305939821Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:19.305944660Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:19.306097315Z [err]      return future.result()
+2025-11-28T14:57:19.306107038Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:19.306113893Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:19.306122607Z [err]      settings = get_settings()
+2025-11-28T14:57:23.567628598Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:23.567635497Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:23.567641667Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:23.567647656Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:23.567653741Z [err]      asyncio.run(main())
+2025-11-28T14:57:23.567659972Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:23.567666191Z [err]      return runner.run(main)
+2025-11-28T14:57:23.567672329Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:23.567677535Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:23.567682237Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:23.567686931Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:23.567691463Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:23.567695796Z [err]      return future.result()
+2025-11-28T14:57:23.570196063Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:23.570201977Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:23.570206824Z [err]      settings = get_settings()
+2025-11-28T14:57:23.570212613Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:23.570217909Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:23.570223173Z [err]      _settings = Settings()
+2025-11-28T14:57:23.570229341Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:23.570234136Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:23.570238000Z [err]      super().__init__(
+2025-11-28T14:57:23.570242118Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:23.570246115Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:23.573153884Z [err]                       ^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:23.573163046Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:23.573171628Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:23.573181338Z [err]  BOT_TOKEN
+2025-11-28T14:57:23.573189436Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:23.573198625Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:23.573210735Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:23.573219754Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:23.573227666Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:23.573235387Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:23.573242584Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:23.573255001Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:23.573262775Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:23.573270235Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:23.573278036Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:23.573286367Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:23.573294205Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:23.573302369Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:23.575587757Z [err]  DATABASE_URL
+2025-11-28T14:57:23.575595592Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:23.575603783Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:28.282314226Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:28.282318765Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:28.282325129Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:28.282333615Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:28.282335392Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:28.282344427Z [err]      settings = get_settings()
+2025-11-28T14:57:28.282344512Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:28.282364537Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:28.282367347Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:28.282374460Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:28.282375863Z [err]      return future.result()
+2025-11-28T14:57:28.282381861Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:28.282388956Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:28.282405943Z [err]      asyncio.run(main())
+2025-11-28T14:57:28.282418348Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:28.282425285Z [err]      return runner.run(main)
+2025-11-28T14:57:28.285998223Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:28.286005540Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:28.286012065Z [err]      _settings = Settings()
+2025-11-28T14:57:28.286018861Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:28.286028478Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:28.286037026Z [err]      super().__init__(
+2025-11-28T14:57:28.286044030Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:28.286050529Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:28.286058456Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:28.286065698Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:28.286071061Z [err]  BOT_TOKEN
+2025-11-28T14:57:28.286080271Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:28.286286646Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:28.286291236Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:28.286305096Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:28.286309953Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:28.286315136Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:28.286320853Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:28.286325692Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:28.286330955Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:28.286335714Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:28.286340492Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:28.286348345Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:28.286355883Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:28.286362211Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:28.286370986Z [err]  DATABASE_URL
+2025-11-28T14:57:28.286377396Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:28.286383778Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:32.654813398Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:32.654816306Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:32.654821713Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:32.654825986Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:32.654828878Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:32.654833722Z [err]      super().__init__(
+2025-11-28T14:57:32.654838224Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:32.654842135Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:32.654847847Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:32.654847894Z [err]      asyncio.run(main())
+2025-11-28T14:57:32.654855444Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:32.654862991Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:32.654863726Z [err]      return runner.run(main)
+2025-11-28T14:57:32.654871107Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:32.654875261Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:32.654883665Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:32.654892853Z [err]      return future.result()
+2025-11-28T14:57:32.654902527Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:32.654912686Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:32.654922888Z [err]      settings = get_settings()
+2025-11-28T14:57:32.654930852Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:32.654939665Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:32.654947162Z [err]      _settings = Settings()
+2025-11-28T14:57:32.657717090Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:32.657722261Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:32.657726382Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:32.657731789Z [err]  BOT_TOKEN
+2025-11-28T14:57:32.657737448Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:32.657742237Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:32.657746941Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:32.657751125Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:32.657755619Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:32.657760826Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:32.657764851Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:32.657769330Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:32.657773864Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:32.657778564Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:32.657784289Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:32.657788648Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:32.657792923Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:32.657797717Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:32.660467016Z [err]  DATABASE_URL
+2025-11-28T14:57:32.660472925Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:32.660479497Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.232244746Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:37.232256397Z [err]      asyncio.run(main())
+2025-11-28T14:57:37.232263962Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:37.232270581Z [err]      return runner.run(main)
+2025-11-28T14:57:37.232282104Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:37.232294128Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:37.232304246Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:37.232310597Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:37.236575230Z [err]  DATABASE_URL
+2025-11-28T14:57:37.236585363Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:37.236586146Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:37.236595380Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.236597338Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:37.236605493Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:37.236613830Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:37.236623430Z [err]      return future.result()
+2025-11-28T14:57:37.236632449Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:37.236645015Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:37.236657686Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.236658410Z [err]      settings = get_settings()
+2025-11-28T14:57:37.236666896Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:37.236668715Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:37.236676932Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:37.236678150Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:37.236683273Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.236687331Z [err]      _settings = Settings()
+2025-11-28T14:57:37.236690851Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:37.236700101Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:37.236705858Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.236711704Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:37.236717272Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:37.236725274Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.237005716Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:37.237012896Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:37.237021057Z [err]      super().__init__(
+2025-11-28T14:57:37.237027880Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:37.237034296Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:37.237040654Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:37.237046973Z [err]  ^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:37.237053552Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:37.237062275Z [err]  BOT_TOKEN
+2025-11-28T14:57:37.237070825Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:37.237077877Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:37.237084492Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:37.237091814Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.717546135Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:56.717559389Z [err]      super().__init__(
+2025-11-28T14:57:56.717569864Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:56.717580938Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:56.717581922Z [err]      asyncio.run(main())
+2025-11-28T14:57:56.717586480Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:56.717592267Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:56.717598846Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:56.717643766Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:56.717649837Z [err]      return runner.run(main)
+2025-11-28T14:57:56.717655773Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.717661848Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:56.717668756Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:56.717674133Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.717681610Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:56.717686356Z [err]      return future.result()
+2025-11-28T14:57:56.717691992Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.717696269Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:56.717702875Z [err]      settings = get_settings()
+2025-11-28T14:57:56.717707182Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:56.717712697Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:56.717717941Z [err]      _settings = Settings()
+2025-11-28T14:57:56.717722347Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:56.719407149Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:56.719412969Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.719419348Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:56.719426619Z [err]  BOT_TOKEN
+2025-11-28T14:57:56.719433667Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.719440625Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.719447327Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:56.719454422Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.719460859Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.719466762Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:56.719473824Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.719484333Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.719490763Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:56.719495952Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.719500751Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.719505376Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:56.719510473Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.721072578Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.721074537Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.721080509Z [err]  DATABASE_URL
+2025-11-28T14:57:56.721080795Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:56.721084582Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:56.721086765Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.721090292Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:56.721093489Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.721095041Z [err]      return future.result()
+2025-11-28T14:57:56.721097526Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:56.721103918Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.721103925Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:56.721110407Z [err]      asyncio.run(main())
+2025-11-28T14:57:56.721112347Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:56.721119198Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:56.721120738Z [err]      settings = get_settings()
+2025-11-28T14:57:56.721126861Z [err]      return runner.run(main)
+2025-11-28T14:57:56.721132316Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.721136992Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:56.721142208Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:56.723159180Z [err]  ^^^^^^^^^^^^
+2025-11-28T14:57:56.723167163Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:56.723170719Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:56.723175741Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:56.723180130Z [err]      _settings = Settings()
+2025-11-28T14:57:56.723184818Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:56.723189555Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:56.723193522Z [err]      super().__init__(
+2025-11-28T14:57:56.723197835Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:56.723201945Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:56.723206231Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.725325376Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.725325992Z [err]  BOT_TOKEN
+2025-11-28T14:57:56.725329550Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:57:56.725332455Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.725335012Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:56.725339756Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.725342615Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.725343322Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.725343854Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.725349572Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:56.725352503Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.725355099Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.725355321Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:56.725357438Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.725361629Z [err]  Traceback (most recent call last):
+2025-11-28T14:57:56.725363468Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:56.725368806Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.725369938Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.725371176Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:57:56.725378922Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:57:56.725384810Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.725390782Z [err]  DATABASE_URL
+2025-11-28T14:57:56.727429966Z [err]      return future.result()
+2025-11-28T14:57:56.727438134Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.727445121Z [err]      asyncio.run(main())
+2025-11-28T14:57:56.727446209Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:57:56.727450786Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:57:56.727455667Z [err]      settings = get_settings()
+2025-11-28T14:57:56.727459401Z [err]      return runner.run(main)
+2025-11-28T14:57:56.727463904Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:57:56.727465375Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.727471284Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:57:56.727473177Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:57:56.727476648Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:57:56.727481672Z [err]      _settings = Settings()
+2025-11-28T14:57:56.727482536Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.727488924Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:57:56.727490093Z [err]                  ^^^^^^^^^^
+2025-11-28T14:57:56.727496754Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:57:56.730536925Z [err]      super().__init__(
+2025-11-28T14:57:56.730542754Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:57:56.730548516Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:57:56.730555683Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.730560495Z [err]  ^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:57:56.730565645Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:57:56.730570684Z [err]  BOT_TOKEN
+2025-11-28T14:57:56.730575626Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.730580733Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.730585528Z [err]  TELEGRAM_API_ID
+2025-11-28T14:57:56.730591388Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.730596571Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.730601231Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:57:56.730607780Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.730612713Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.732257015Z [err]  TELEGRAM_PHONE
+2025-11-28T14:57:56.732261548Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.732266658Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.732273206Z [err]  GEMINI_API_KEY
+2025-11-28T14:57:56.732277931Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.732288931Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:57:56.732294614Z [err]  DATABASE_URL
+2025-11-28T14:57:56.732300929Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:57:56.732306436Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.387829813Z [err]  Traceback (most recent call last):
+2025-11-28T14:58:01.388340206Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:58:01.388348614Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:58:01.388353917Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:58:01.388358763Z [err]      asyncio.run(main())
+2025-11-28T14:58:01.388365456Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:58:01.388369782Z [err]      return runner.run(main)
+2025-11-28T14:58:01.388374458Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:58:01.388379072Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:58:01.388383082Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:58:01.388387381Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:58:01.388391472Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:58:01.388400441Z [err]      return future.result()
+2025-11-28T14:58:01.388404407Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:58:01.388408779Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:58:01.388412903Z [err]      settings = get_settings()
+2025-11-28T14:58:01.391053254Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:58:01.391058644Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:58:01.391064083Z [err]      _settings = Settings()
+2025-11-28T14:58:01.391069003Z [err]                  ^^^^^^^^^^
+2025-11-28T14:58:01.391074393Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:58:01.391080956Z [err]      super().__init__(
+2025-11-28T14:58:01.391085588Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:58:01.391091875Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:58:01.391096860Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:58:01.392906221Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.392912021Z [err]  TELEGRAM_PHONE
+2025-11-28T14:58:01.392917403Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:01.392920217Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.392924160Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.392932331Z [err]  GEMINI_API_KEY
+2025-11-28T14:58:01.392938691Z [err]  TELEGRAM_API_ID
+2025-11-28T14:58:01.392940134Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:01.392944099Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:58:01.392952244Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.392952400Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:01.392953496Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:58:01.392961923Z [err]  BOT_TOKEN
+2025-11-28T14:58:01.392963130Z [err]  DATABASE_URL
+2025-11-28T14:58:01.392964875Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.392968642Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:01.392972336Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:01.392975969Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:01.392979615Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:58:01.392987314Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.754140378Z [err]  Traceback (most recent call last):
+2025-11-28T14:58:05.754144423Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T14:58:05.754147725Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T14:58:05.754156859Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T14:58:05.754161052Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:58:05.754166817Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T14:58:05.754176134Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T14:58:05.754176423Z [err]      asyncio.run(main())
+2025-11-28T14:58:05.754183498Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T14:58:05.754188142Z [err]      return runner.run(main)
+2025-11-28T14:58:05.754194666Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T14:58:05.754201953Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T14:58:05.756173636Z [err]      return future.result()
+2025-11-28T14:58:05.756181184Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T14:58:05.756188164Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T14:58:05.756201377Z [err]      settings = get_settings()
+2025-11-28T14:58:05.756208243Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T14:58:05.756214677Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T14:58:05.756220605Z [err]      _settings = Settings()
+2025-11-28T14:58:05.756226327Z [err]                  ^^^^^^^^^^
+2025-11-28T14:58:05.756233026Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T14:58:05.756240159Z [err]      super().__init__(
+2025-11-28T14:58:05.756246557Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T14:58:05.756253962Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T14:58:05.756260704Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:58:05.758261841Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T14:58:05.758269968Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T14:58:05.758277439Z [err]  BOT_TOKEN
+2025-11-28T14:58:05.758284107Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.758292197Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:05.758299223Z [err]  TELEGRAM_API_ID
+2025-11-28T14:58:05.758306411Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.758313576Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:05.758320916Z [err]  TELEGRAM_API_HASH
+2025-11-28T14:58:05.758327533Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.758334258Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:05.758342124Z [err]  TELEGRAM_PHONE
+2025-11-28T14:58:05.758349974Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.758355275Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:05.758360116Z [err]  GEMINI_API_KEY
+2025-11-28T14:58:05.758365400Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.758371547Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T14:58:05.760988877Z [err]  DATABASE_URL
+2025-11-28T14:58:05.760996723Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T14:58:05.761004124Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.830292598Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.830325224Z [err]      asyncio.run(main())
+2025-11-28T15:04:25.830339424Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:25.830345077Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:25.830347239Z [err]      return runner.run(main)
+2025-11-28T15:04:25.830354745Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.830354988Z [err]      return future.result()
+2025-11-28T15:04:25.830355514Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:25.830361693Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.830364842Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:25.830365576Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:25.830369838Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:25.830374172Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:25.830375265Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:25.830382315Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:25.832383269Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:25.832393115Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:25.832400985Z [err]      settings = get_settings()
+2025-11-28T15:04:25.832402439Z [err]                       ^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.832430133Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:25.832442015Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:25.832450140Z [err]      _settings = Settings()
+2025-11-28T15:04:25.832457248Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:25.832467105Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:25.832476023Z [err]      super().__init__(
+2025-11-28T15:04:25.833163739Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.833169968Z [err]  DATABASE_URL
+2025-11-28T15:04:25.833174873Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.833311617Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.833317403Z [err]  ^^^^^^
+2025-11-28T15:04:25.833323464Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:25.833329169Z [err]  BOT_TOKEN
+2025-11-28T15:04:25.833340094Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.833345695Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.833351937Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:25.833359087Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.833606153Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.833615660Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:25.833620556Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.833625124Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.833629644Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:25.833638528Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.833648935Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.833657255Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:25.833662073Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.835620292Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:25.835649804Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:25.835658200Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:25.835658634Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.835666555Z [err]  ^
+2025-11-28T15:04:25.835673464Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:25.835679247Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:25.835681033Z [err]      return future.result()
+2025-11-28T15:04:25.835687880Z [err]      asyncio.run(main())
+2025-11-28T15:04:25.835694712Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:25.835701407Z [err]      return runner.run(main)
+2025-11-28T15:04:25.835708541Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.835781600Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.835791800Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:25.835809965Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:25.838065501Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:25.838079377Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:25.838087547Z [err]                       ^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.838104667Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:25.838110175Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.838113958Z [err]      _settings = Settings()
+2025-11-28T15:04:25.838118040Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:25.838121092Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:25.838125826Z [err]      settings = get_settings()
+2025-11-28T15:04:25.838128145Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:25.838135569Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:25.838135795Z [err]      super().__init__(
+2025-11-28T15:04:25.839211300Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.839218983Z [err]  ^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.839226058Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:25.839235115Z [err]  BOT_TOKEN
+2025-11-28T15:04:25.839241501Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.839247374Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.839253954Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:25.839259802Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.839266356Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.839272745Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:25.839279049Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.839285444Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.839292811Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:25.839298213Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.839303417Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.840953211Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:25.840960344Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.840965550Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.840971581Z [err]  DATABASE_URL
+2025-11-28T15:04:25.840977542Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.840983390Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.840988978Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:25.840994354Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:25.840999604Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:25.841005695Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:25.841013365Z [err]      asyncio.run(main())
+2025-11-28T15:04:25.841018442Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:25.841023520Z [err]      return runner.run(main)
+2025-11-28T15:04:25.841028441Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.841033692Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:25.841039646Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:25.841047450Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.841053272Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:25.841058470Z [err]      return future.result()
+2025-11-28T15:04:25.842289826Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:25.842293736Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.842299270Z [err]      settings = get_settings()
+2025-11-28T15:04:25.842304078Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.842307911Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:25.842312005Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:25.842316309Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:25.842332443Z [err]      _settings = Settings()
+2025-11-28T15:04:25.842340275Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:25.842347915Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:25.842353840Z [err]      super().__init__(
+2025-11-28T15:04:25.842362405Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:25.842370108Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:25.842377120Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.842383586Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:25.842392439Z [err]  BOT_TOKEN
+2025-11-28T15:04:25.842520871Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:25.843829769Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.843835784Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.843840873Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:25.843847552Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.843855059Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.843860590Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:25.843876202Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.843881667Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.843887267Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:25.843892054Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.843898407Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:25.843915884Z [err]  DATABASE_URL
+2025-11-28T15:04:25.843921506Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:25.843926966Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:29.900741875Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:29.900747669Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:29.900753610Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:29.900760319Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:29.900765763Z [err]      asyncio.run(main())
+2025-11-28T15:04:29.900771328Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:29.900777609Z [err]      return runner.run(main)
+2025-11-28T15:04:29.900785720Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:29.900792244Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:29.900797733Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:29.900802869Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:29.900808146Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:29.900813776Z [err]      return future.result()
+2025-11-28T15:04:29.900847025Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:29.900854374Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:29.900861044Z [err]      settings = get_settings()
+2025-11-28T15:04:29.900868421Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:29.900874385Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:29.900879793Z [err]      _settings = Settings()
+2025-11-28T15:04:29.900884697Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:29.900889754Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:29.900897822Z [err]      super().__init__(
+2025-11-28T15:04:29.900904036Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:29.904760241Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:29.904765588Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:29.904770296Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:29.904775122Z [err]  BOT_TOKEN
+2025-11-28T15:04:29.904887102Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:29.904893552Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:29.904898641Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:29.904903819Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:29.904908401Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:29.904913440Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:29.904917810Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:29.904923068Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:29.904928443Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:29.904933694Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:29.904939355Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:29.904944548Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:29.904951394Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:29.904955551Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:29.904960047Z [err]  DATABASE_URL
+2025-11-28T15:04:29.904965000Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:29.904970098Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:34.313685623Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:34.313690618Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:34.313695830Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:34.313701194Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:34.313706583Z [err]      asyncio.run(main())
+2025-11-28T15:04:34.313711725Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:34.313717210Z [err]      return runner.run(main)
+2025-11-28T15:04:34.313722571Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:34.313728011Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:34.313732888Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:34.313737839Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:34.313743420Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:34.313749145Z [err]      return future.result()
+2025-11-28T15:04:34.313754853Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:34.313761719Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:34.313767345Z [err]      settings = get_settings()
+2025-11-28T15:04:34.316342255Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:34.316352857Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:34.316353977Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:34.316359440Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:34.316363510Z [err]  ^^^^^^^^^^^^
+2025-11-28T15:04:34.316365395Z [err]      _settings = Settings()
+2025-11-28T15:04:34.316370686Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:34.316375201Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:34.316379615Z [err]      super().__init__(
+2025-11-28T15:04:34.316384441Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:34.316389027Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:34.319675728Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:34.319679159Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:34.319682078Z [err]  BOT_TOKEN
+2025-11-28T15:04:34.319689261Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:34.319692512Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:34.319696024Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:34.319702188Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:34.319704032Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:34.319709940Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:34.319713363Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:34.319719620Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:34.319729508Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:34.319735474Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:34.319742363Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:34.319751010Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:34.319760323Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:34.319767924Z [err]  DATABASE_URL
+2025-11-28T15:04:34.319774034Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:34.319780800Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:38.898366625Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:38.898378787Z [err]      settings = get_settings()
+2025-11-28T15:04:38.898403387Z [err]  ^
+2025-11-28T15:04:38.898411048Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:38.898418612Z [err]      return future.result()
+2025-11-28T15:04:38.898425805Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:38.898439306Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:38.898444502Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:38.898451591Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:38.898460981Z [err]      return runner.run(main)
+2025-11-28T15:04:38.898465120Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:38.898471484Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:38.898479370Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:38.898485304Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:38.898495825Z [err]      asyncio.run(main())
+2025-11-28T15:04:38.898497168Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:38.898508259Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:38.902201034Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:38.902207378Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:38.902224857Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:38.902225142Z [err]  DATABASE_URL
+2025-11-28T15:04:38.902243621Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:38.902375935Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:38.902382220Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:38.902388358Z [err]      _settings = Settings()
+2025-11-28T15:04:38.902394485Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:38.902400324Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:38.902408002Z [err]      super().__init__(
+2025-11-28T15:04:38.902415290Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:38.902422861Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:38.902428295Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:38.902766464Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:38.902773879Z [err]  ^^^^^^^^
+2025-11-28T15:04:38.902780922Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:38.902790138Z [err]  BOT_TOKEN
+2025-11-28T15:04:38.902798378Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:38.902804777Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:38.902809555Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:38.902814710Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:38.902821769Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:38.902828176Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:38.902833399Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:38.902838486Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:38.902845413Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:38.902852157Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:38.902859587Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:38.904339787Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:43.930040945Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:43.930051175Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:43.930057994Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:43.930063355Z [err]      asyncio.run(main())
+2025-11-28T15:04:43.930069279Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:43.930075434Z [err]      return runner.run(main)
+2025-11-28T15:04:43.930080933Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:43.930086819Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:43.930092017Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:43.930099787Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:43.930104963Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:43.930110002Z [err]      return future.result()
+2025-11-28T15:04:43.930115144Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:43.930120528Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:43.930125275Z [err]      settings = get_settings()
+2025-11-28T15:04:43.930130877Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:43.930138384Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:43.930294015Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:43.933268436Z [err]      _settings = Settings()
+2025-11-28T15:04:43.933273840Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:43.933279215Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:43.933284952Z [err]      super().__init__(
+2025-11-28T15:04:43.933290079Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:43.933296312Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:43.933301704Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:43.933312862Z [err]  ^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:43.933317640Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:43.933323638Z [err]  BOT_TOKEN
+2025-11-28T15:04:43.933329210Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:43.933335972Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:43.933430218Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:43.933434758Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:43.933439913Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:43.933444413Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:43.933450596Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:43.933456524Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:43.933461356Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:43.933465590Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:43.933655388Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:43.933661487Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:43.933666823Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:43.933673471Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:43.933679276Z [err]  DATABASE_URL
+2025-11-28T15:04:43.933684739Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:43.933690694Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:48.144256978Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:48.144267432Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:48.144275146Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:48.144282328Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:48.144293784Z [err]      asyncio.run(main())
+2025-11-28T15:04:48.144300940Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:48.144311256Z [err]      return runner.run(main)
+2025-11-28T15:04:48.144318466Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:48.144332527Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:48.144339131Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:48.144344983Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:48.144353558Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:48.144359587Z [err]      return future.result()
+2025-11-28T15:04:48.144372260Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:48.144380166Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:48.144386559Z [err]      settings = get_settings()
+2025-11-28T15:04:48.147396270Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:48.147407616Z [err]      super().__init__(
+2025-11-28T15:04:48.147414374Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:48.147419561Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:48.147424379Z [err]                       ^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:48.147462759Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:48.147469659Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:48.147476258Z [err]      _settings = Settings()
+2025-11-28T15:04:48.147483334Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:48.151242548Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:48.151251798Z [err]  ^^^^^^^^^^
+2025-11-28T15:04:48.151260140Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:48.151268264Z [err]  BOT_TOKEN
+2025-11-28T15:04:48.151272482Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:48.151276713Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:48.151281390Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:48.151287588Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:48.151293256Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:48.151298393Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:48.151303674Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:48.151308888Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:48.151315478Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:48.151322897Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:48.151328379Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:48.151334351Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:48.151339454Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:48.151345910Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:48.151353242Z [err]  DATABASE_URL
+2025-11-28T15:04:48.151358110Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:48.151363979Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:52.891035417Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:52.891044311Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:52.891049204Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:52.891059567Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:52.891066857Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:52.891068086Z [err]      asyncio.run(main())
+2025-11-28T15:04:52.891078688Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:52.891080049Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:52.891085228Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:52.891095435Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:52.891099076Z [err]      return runner.run(main)
+2025-11-28T15:04:52.891108386Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:52.891108554Z [err]      return future.result()
+2025-11-28T15:04:52.891112815Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:52.891119771Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:52.891128025Z [err]      settings = get_settings()
+2025-11-28T15:04:52.895786511Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:52.895806839Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:52.895817253Z [err]      _settings = Settings()
+2025-11-28T15:04:52.895827030Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:52.895835606Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:52.895844764Z [err]      super().__init__(
+2025-11-28T15:04:52.895853164Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:52.895862660Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:52.895871814Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:52.896223284Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:52.896230228Z [err]  ^^
+2025-11-28T15:04:52.896238599Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:52.896249031Z [err]  BOT_TOKEN
+2025-11-28T15:04:52.896257084Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:52.896265356Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:52.896273600Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:52.896282602Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:52.896292002Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:52.896299736Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:52.896308028Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:52.896321374Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:52.896330393Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:52.896338776Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:52.896345957Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:52.896353009Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:52.896361971Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:52.896370293Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:52.896380582Z [err]  DATABASE_URL
+2025-11-28T15:04:52.896388416Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:52.896396328Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:57.281169678Z [err]  Traceback (most recent call last):
+2025-11-28T15:04:57.281174816Z [err]    File "<frozen runpy>", line 198, in _run_module_as_main
+2025-11-28T15:04:57.281180155Z [err]    File "<frozen runpy>", line 88, in _run_code
+2025-11-28T15:04:57.281185538Z [err]    File "/app/bot/main.py", line 128, in <module>
+2025-11-28T15:04:57.281191128Z [err]      asyncio.run(main())
+2025-11-28T15:04:57.281196033Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+2025-11-28T15:04:57.281202326Z [err]      return runner.run(main)
+2025-11-28T15:04:57.281207559Z [err]             ^^^^^^^^^^^^^^^^
+2025-11-28T15:04:57.281213229Z [err]    File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+2025-11-28T15:04:57.281218904Z [err]      return self._loop.run_until_complete(task)
+2025-11-28T15:04:57.281224667Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:57.281240851Z [err]    File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+2025-11-28T15:04:57.281247203Z [err]      return future.result()
+2025-11-28T15:04:57.281253622Z [err]             ^^^^^^^^^^^^^^^
+2025-11-28T15:04:57.281259468Z [err]    File "/app/bot/main.py", line 87, in main
+2025-11-28T15:04:57.281265489Z [err]      settings = get_settings()
+2025-11-28T15:04:57.281274795Z [err]                 ^^^^^^^^^^^^^^
+2025-11-28T15:04:57.281280305Z [err]    File "/app/core/config.py", line 117, in get_settings
+2025-11-28T15:04:57.282744220Z [err]      _settings = Settings()
+2025-11-28T15:04:57.282755366Z [err]                  ^^^^^^^^^^
+2025-11-28T15:04:57.282763787Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic_settings/main.py", line 194, in __init__
+2025-11-28T15:04:57.282768804Z [err]      super().__init__(
+2025-11-28T15:04:57.282773305Z [err]    File "/root/.local/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+2025-11-28T15:04:57.282779181Z [err]      validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+2025-11-28T15:04:57.282784234Z [err]                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:57.282789675Z [err]  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-28T15:04:57.282793750Z [err]  ^^^^^^^^
+2025-11-28T15:04:57.284210746Z [err]  GEMINI_API_KEY
+2025-11-28T15:04:57.284214180Z [err]  pydantic_core._pydantic_core.ValidationError: 6 validation errors for Settings
+2025-11-28T15:04:57.284219704Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:57.284225245Z [err]  BOT_TOKEN
+2025-11-28T15:04:57.284225700Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:57.284233607Z [err]  DATABASE_URL
+2025-11-28T15:04:57.284234062Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:57.284240359Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:57.284242595Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:57.284246921Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:57.284250669Z [err]  TELEGRAM_API_ID
+2025-11-28T15:04:57.284257278Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:57.284265532Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:57.284271391Z [err]  TELEGRAM_API_HASH
+2025-11-28T15:04:57.284277469Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:57.284282866Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-11-28T15:04:57.284288286Z [err]  TELEGRAM_PHONE
+2025-11-28T15:04:57.284293796Z [err]    Field required [type=missing, input_value={}, input_type=dict]
+2025-11-28T15:04:57.284299034Z [err]      For further information visit https://errors.pydantic.dev/2.11/v/missing

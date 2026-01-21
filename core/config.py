@@ -1,4 +1,4 @@
-"""Configuration module for the freelance parser bot.
+"""Configuration module for the crypto parser bot.
 
 Loads settings from environment variables and YAML config files.
 """
@@ -29,19 +29,15 @@ class Settings(BaseSettings):
     TELEGRAM_API_HASH: str
     TELEGRAM_PHONE: str
 
-    # Gemini AI
-    GEMINI_API_KEY: str
-
     # Database
     DATABASE_URL: str
 
     @field_validator("DATABASE_URL", mode="before")
     @classmethod
     def convert_database_url(cls, v: str) -> str:
-        """Convert postgres:// or postgresql:// to postgresql+asyncpg:// for async support."""
+        """Convert postgres:// to postgresql+asyncpg:// for async support."""
         if not v:
             return v
-        # Railway и другие сервисы часто используют postgres:// (устаревший формат)
         if v.startswith("postgres://"):
             return v.replace("postgres://", "postgresql+asyncpg://", 1)
         if v.startswith("postgresql://"):
@@ -49,10 +45,9 @@ class Settings(BaseSettings):
         return v
 
     # Worker settings
-    PARSE_INTERVAL_HOURS: int = 2
+    PARSE_DAYS: int = 2  # Today + yesterday
     REQUEST_DELAY_SEC: float = 1.5
-    MESSAGES_TTL_DAYS: int = 30
-    BATCH_SIZE: int = 50
+    MIN_MESSAGE_LENGTH: int = 10
 
     @field_validator("ADMIN_IDS", mode="before")
     @classmethod
@@ -68,18 +63,10 @@ class Settings(BaseSettings):
 
 
 def load_chats_config(config_path: str | Path = "config/chats.yaml") -> dict[str, Any]:
-    """Load chat categories configuration from YAML file.
-
-    Args:
-        config_path: Path to the YAML configuration file.
+    """Load chat configuration from YAML file.
 
     Returns:
-        Dictionary with "categories" key containing category objects.
-
-    Raises:
-        FileNotFoundError: If the config file doesn't exist.
-        yaml.YAMLError: If the YAML syntax is invalid.
-        ValueError: If required fields are missing.
+        Dictionary with "chats" list and "settings".
     """
     path = Path(config_path)
 
@@ -92,17 +79,8 @@ def load_chats_config(config_path: str | Path = "config/chats.yaml") -> dict[str
     if config is None:
         raise ValueError("Configuration file is empty")
 
-    if "categories" not in config:
-        raise ValueError("Configuration must contain 'categories' key")
-
-    # Validate each category has required fields
-    for slug, category in config["categories"].items():
-        if not isinstance(category, dict):
-            raise ValueError(f"Category '{slug}' must be a dictionary")
-        if "name" not in category:
-            raise ValueError(f"Category '{slug}' must have 'name' field")
-        if "chats" not in category:
-            raise ValueError(f"Category '{slug}' must have 'chats' field")
+    if "chats" not in config:
+        raise ValueError("Configuration must contain 'chats' key")
 
     return config
 
@@ -112,11 +90,7 @@ _settings: Settings | None = None
 
 
 def get_settings() -> Settings:
-    """Get the global settings instance.
-
-    Returns:
-        Settings instance loaded from environment.
-    """
+    """Get the global settings instance."""
     global _settings
     if _settings is None:
         _settings = Settings()

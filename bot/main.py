@@ -1,7 +1,4 @@
-"""Main entry point for the Telegram bot.
-
-Initializes the bot, registers handlers, and starts the dispatcher.
-"""
+"""Main entry point for the Telegram bot."""
 
 import asyncio
 import logging
@@ -10,12 +7,10 @@ from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 
-from core.config import get_settings, load_chats_config
-from core.database import init_db
+from core.config import get_settings
 from core.models import Base
-from bot.handlers import start, requests, admin
-from bot.middlewares import WhitelistMiddleware
-from services.category_service import CategoryService
+from bot.handlers import start, admin
+from bot.middlewares import AdminMiddleware
 
 # Configure logging
 logging.basicConfig(
@@ -26,83 +21,31 @@ logger = logging.getLogger(__name__)
 
 
 async def setup_database(settings) -> async_sessionmaker:
-    """Initialize database and return session factory.
-    
-    Args:
-        settings: Application settings.
-        
-    Returns:
-        Async session maker factory.
-    """
-    # Create async engine
+    """Initialize database and return session factory."""
     engine = create_async_engine(
         settings.DATABASE_URL,
         echo=False,
         pool_pre_ping=True,
     )
     
-    # Initialize database tables
+    # Create tables
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     
-    # Create session factory
-    async_session_factory = async_sessionmaker(
+    return async_sessionmaker(
         engine,
         class_=AsyncSession,
         expire_on_commit=False,
     )
-    
-    return async_session_factory
-
-
-async def sync_categories(session_factory: async_sessionmaker, settings) -> None:
-    """Sync categories from config file to database.
-    
-    Args:
-        session_factory: Async session factory.
-        settings: Application settings.
-    """
-    try:
-        # Load config
-        config = load_chats_config("config/chats.yaml")
-        
-        # Sync categories
-        async with session_factory() as session:
-            category_service = CategoryService(session)
-            await category_service.sync_from_config(config)
-            logger.info("Categories synced successfully")
-    except FileNotFoundError:
-        logger.warning("config/chats.yaml not found, skipping category sync")
-    except Exception as e:
-        logger.error(f"Error syncing categories: {e}")
 
 
 async def main():
-    """Main bot startup function.
-    
-    Initializes bot, registers handlers, and starts dispatcher.
-    
-    Requirements: 7.3
-    """
-    # Get settings
+    """Main bot startup function."""
     settings = get_settings()
-    
-    # Debug: log DATABASE_URL (masked)
-    db_url = settings.DATABASE_URL
-    if db_url:
-        # Mask password in URL for logging
-        masked_url = db_url[:30] + "..." if len(db_url) > 30 else db_url
-        logger.info(f"DATABASE_URL starts with: {masked_url}")
-    else:
-        logger.error("DATABASE_URL is empty or not set!")
     
     # Setup database
     logger.info("Setting up database...")
     session_factory = await setup_database(settings)
-    
-    # Sync categories from config
-    logger.info("Syncing categories...")
-    await sync_categories(session_factory, settings)
     
     # Create bot and dispatcher
     logger.info("Initializing bot...")
@@ -110,10 +53,10 @@ async def main():
     storage = MemoryStorage()
     dp = Dispatcher(storage=storage)
     
-    # Register middlewares
-    dp.message.middleware(WhitelistMiddleware())
+    # Register admin middleware (only admins can use the bot)
+    dp.message.middleware(AdminMiddleware())
     
-    # Session middleware to inject database session into handlers
+    # Session middleware
     from aiogram import BaseMiddleware
     from typing import Callable, Dict, Any, Awaitable
     from aiogram.types import TelegramObject
@@ -133,7 +76,6 @@ async def main():
     
     # Register routers
     dp.include_router(start.router)
-    dp.include_router(requests.router)
     dp.include_router(admin.router)
     
     # Start polling
