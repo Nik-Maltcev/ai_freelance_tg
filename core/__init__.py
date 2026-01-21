@@ -1,7 +1,4 @@
-"""Core module for the freelance parser bot.
-
-Contains configuration, database, and model definitions.
-"""
+"""Core module for the crypto parser bot."""
 
 from core.config import Settings, get_settings, load_chats_config
 from core.database import (
@@ -10,21 +7,16 @@ from core.database import (
     get_async_session,
     init_db,
 )
-from core.models import Base, Category, FreelanceRequest, ParseLog
+from core.models import Base, ParseLog
 
 __all__ = [
-    # Config
     "Settings",
     "get_settings",
     "load_chats_config",
-    # Database
     "get_async_engine",
     "get_async_session",
     "init_db",
     "close_db",
-    # Models
     "Base",
-    "FreelanceRequest",
     "ParseLog",
-    "Category",
 ]
