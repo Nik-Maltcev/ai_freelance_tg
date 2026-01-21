@@ -1,12 +1,11 @@
 """Scheduler module for periodic parsing jobs.
 
-Parses crypto chats and saves messages to JSON files.
+Parses crypto chats and saves messages to database.
 """
 
 import json
 import logging
 from datetime import datetime
-from pathlib import Path
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.interval import IntervalTrigger
@@ -19,20 +18,14 @@ from worker.telethon_client import get_telethon_client
 
 logger = logging.getLogger(__name__)
 
-# Directory for JSON exports
-EXPORT_DIR = Path("exports")
 
-
-async def parse_chats_job() -> str | None:
-    """Main parsing job that parses chats and saves to JSON.
+async def parse_chats_job() -> int | None:
+    """Main parsing job that parses chats and saves to database.
     
     Returns:
-        Path to the generated JSON file, or None on failure.
+        ParseLog ID, or None on failure.
     """
     settings = get_settings()
-    
-    # Ensure export directory exists
-    EXPORT_DIR.mkdir(exist_ok=True)
     
     async_session = get_async_session()
     async with async_session() as session:
@@ -46,7 +39,6 @@ async def parse_chats_job() -> str | None:
         
         total_chats = 0
         total_messages = 0
-        json_file = None
         
         try:
             # Load chat configuration
@@ -66,11 +58,7 @@ async def parse_chats_job() -> str | None:
             total_chats = len(chat_ids)
             total_messages = len(messages)
             
-            # Generate JSON filename with timestamp
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            json_file = EXPORT_DIR / f"crypto_messages_{timestamp}.json"
-            
-            # Save to JSON
+            # Create JSON data
             export_data = {
                 "parsed_at": datetime.now().isoformat(),
                 "parse_days": parse_days,
@@ -79,24 +67,20 @@ async def parse_chats_job() -> str | None:
                 "messages": messages,
             }
             
-            with open(json_file, "w", encoding="utf-8") as f:
-                json.dump(export_data, f, ensure_ascii=False, indent=2)
-            
-            logger.info(f"Saved {total_messages} messages to {json_file}")
-            
-            # Update parse log
+            # Save to database
             log.finished_at = datetime.utcnow()
             log.status = "success"
             log.chats_parsed = total_chats
             log.messages_found = total_messages
-            log.json_file = str(json_file)
+            log.json_data = json.dumps(export_data, ensure_ascii=False)
             await session.commit()
             
+            logger.info(f"Saved {total_messages} messages to database")
             logger.info(
                 f"Parsing job completed: {total_chats} chats, {total_messages} messages"
             )
             
-            return str(json_file)
+            return log_id
             
         except Exception as e:
             logger.error(f"Parsing job failed: {e}")
@@ -109,44 +93,20 @@ async def parse_chats_job() -> str | None:
             raise
 
 
-async def trigger_parse_job() -> str | None:
+async def trigger_parse_job() -> int | None:
     """Trigger manual parsing job.
     
     Returns:
-        Path to the generated JSON file.
+        ParseLog ID.
     """
     return await parse_chats_job()
 
 
-def get_latest_export() -> Path | None:
-    """Get the most recent JSON export file.
-    
-    Returns:
-        Path to the latest export file, or None if no exports exist.
-    """
-    if not EXPORT_DIR.exists():
-        return None
-    
-    json_files = list(EXPORT_DIR.glob("crypto_messages_*.json"))
-    if not json_files:
-        return None
-    
-    # Sort by modification time, newest first
-    json_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
-    return json_files[0]
-
-
 def create_scheduler() -> AsyncIOScheduler:
-    """Create and configure APScheduler for periodic parsing.
-    
-    Returns:
-        Configured AsyncIOScheduler instance (not started).
-    """
-    settings = get_settings()
-    
+    """Create and configure APScheduler for periodic parsing."""
     scheduler = AsyncIOScheduler()
     
-    # Add parsing job - run every 6 hours by default
+    # Run every 6 hours
     scheduler.add_job(
         parse_chats_job,
         trigger=IntervalTrigger(hours=6),
@@ -156,5 +116,4 @@ def create_scheduler() -> AsyncIOScheduler:
     )
     
     logger.info("Scheduler configured with 6h interval")
-    
     return scheduler

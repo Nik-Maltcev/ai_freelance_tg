@@ -1,20 +1,16 @@
-"""Admin command handlers for the Telegram bot.
+"""Admin command handlers for the Telegram bot."""
 
-Implements /status, /parse, and /export commands.
-"""
-
+import json
 import logging
-from pathlib import Path
+from io import BytesIO
 
 from aiogram import Router
-from aiogram.types import Message, FSInputFile
+from aiogram.types import Message, BufferedInputFile
 from aiogram.filters import Command
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from bot.keyboards import get_back_keyboard
 from core.models import ParseLog
-from worker.scheduler import trigger_parse_job, get_latest_export
 
 router = Router()
 logger = logging.getLogger(__name__)
@@ -53,8 +49,10 @@ async def status_command(message: Message, session: AsyncSession):
         f"💬 Сообщений найдено: {last_log.messages_found}"
     )
     
-    if last_log.json_file:
-        status_text += f"\n📄 Файл: {last_log.json_file}"
+    if last_log.json_data:
+        # Calculate JSON size
+        size_mb = len(last_log.json_data.encode('utf-8')) / (1024 * 1024)
+        status_text += f"\n📦 Размер JSON: {size_mb:.1f} MB"
     
     if last_log.error_message:
         status_text += f"\n\n⚠️ Ошибка: {last_log.error_message}"
@@ -62,46 +60,39 @@ async def status_command(message: Message, session: AsyncSession):
     await message.answer(status_text)
 
 
-@router.message(Command("parse"))
-async def parse_command(message: Message):
-    """Handle /parse command - trigger manual parsing."""
-    await message.answer("🚀 Запускаю парсинг чатов...")
-    
-    try:
-        json_file = await trigger_parse_job()
-        
-        if json_file:
-            await message.answer(
-                f"✅ Парсинг завершён!\n"
-                f"📄 Файл: {json_file}\n\n"
-                f"Используйте /export для скачивания"
-            )
-        else:
-            await message.answer("❌ Парсинг завершился без результатов")
-            
-    except Exception as e:
-        logger.error(f"Parse command failed: {e}")
-        await message.answer(f"❌ Ошибка парсинга: {str(e)}")
-
-
 @router.message(Command("export"))
-async def export_command(message: Message):
+async def export_command(message: Message, session: AsyncSession):
     """Handle /export command - send latest JSON file."""
-    latest_file = get_latest_export()
+    result = await session.execute(
+        select(ParseLog)
+        .where(ParseLog.status == "success")
+        .where(ParseLog.json_data.isnot(None))
+        .order_by(ParseLog.started_at.desc())
+        .limit(1)
+    )
+    last_log = result.scalar_one_or_none()
     
-    if not latest_file or not latest_file.exists():
+    if not last_log or not last_log.json_data:
         await message.answer(
             "📭 Нет доступных экспортов.\n\n"
-            "Используйте /parse для запуска парсинга."
+            "Дождитесь завершения парсинга (каждые 6 часов)."
         )
         return
     
     try:
-        # Send file
-        document = FSInputFile(latest_file, filename=latest_file.name)
+        # Create file from JSON data
+        json_bytes = last_log.json_data.encode('utf-8')
+        filename = f"crypto_messages_{last_log.started_at.strftime('%Y%m%d_%H%M%S')}.json"
+        
+        document = BufferedInputFile(json_bytes, filename=filename)
+        
         await message.answer_document(
             document,
-            caption=f"📄 Экспорт сообщений\n📅 {latest_file.stem}"
+            caption=(
+                f"📄 Экспорт сообщений\n"
+                f"📅 {last_log.started_at.strftime('%d.%m.%Y %H:%M')}\n"
+                f"💬 {last_log.messages_found} сообщений"
+            )
         )
     except Exception as e:
         logger.error(f"Export command failed: {e}")
@@ -114,9 +105,9 @@ async def help_command(message: Message):
     help_text = (
         "🤖 Crypto Parser Bot\n\n"
         "Доступные команды:\n\n"
-        "/parse - Запустить парсинг чатов\n"
         "/export - Скачать последний JSON\n"
         "/status - Статус последнего парсинга\n"
-        "/help - Показать эту справку"
+        "/help - Показать эту справку\n\n"
+        "⏰ Парсинг запускается автоматически каждые 6 часов."
     )
     await message.answer(help_text)

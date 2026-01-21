@@ -28,7 +28,7 @@ class ParseLog(Base):
     status: Mapped[str] = mapped_column(String(20), default="running")
     chats_parsed: Mapped[int] = mapped_column(Integer, default=0)
     messages_found: Mapped[int] = mapped_column(Integer, default=0)
-    json_file: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    json_data: Mapped[str | None] = mapped_column(Text, nullable=True)  # JSON stored in DB
     error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     def __repr__(self) -> str:
