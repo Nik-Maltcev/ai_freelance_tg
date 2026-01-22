@@ -53,12 +53,23 @@ class Settings(BaseSettings):
     @classmethod
     def parse_admin_ids(cls, v: Any) -> list[int]:
         """Parse ADMIN_IDS from comma-separated string or list."""
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.info(f"Parsing ADMIN_IDS: {v} (type: {type(v)})")
+        
+        if v is None:
+            return []
         if isinstance(v, str):
-            if not v.strip():
+            v = v.strip()
+            if not v:
                 return []
-            return [int(x.strip()) for x in v.split(",")]
+            result = [int(x.strip()) for x in v.split(",") if x.strip()]
+            logger.info(f"Parsed ADMIN_IDS: {result}")
+            return result
         if isinstance(v, list):
             return [int(x) for x in v]
+        if isinstance(v, int):
+            return [v]
         return []
 
 
