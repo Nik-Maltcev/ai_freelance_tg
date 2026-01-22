@@ -19,9 +19,9 @@ class AdminMiddleware(BaseMiddleware):
     ) -> Any:
         settings = get_settings()
         
-        # Check if user is admin
-        if event.from_user and event.from_user.id in settings.ADMIN_IDS:
+        # Get user from message or callback
+        user = getattr(event, 'from_user', None)
+        if user and user.id in settings.ADMIN_IDS:
             return await handler(event, data)
         
-        # Ignore non-admin users silently
         return None

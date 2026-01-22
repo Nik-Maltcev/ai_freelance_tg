@@ -12,7 +12,6 @@ from core.models import Base
 from bot.handlers import start, admin
 from bot.middlewares import AdminMiddleware
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -28,7 +27,6 @@ async def setup_database(settings) -> async_sessionmaker:
         pool_pre_ping=True,
     )
     
-    # Create tables
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     
@@ -43,18 +41,17 @@ async def main():
     """Main bot startup function."""
     settings = get_settings()
     
-    # Setup database
     logger.info("Setting up database...")
     session_factory = await setup_database(settings)
     
-    # Create bot and dispatcher
     logger.info("Initializing bot...")
     bot = Bot(token=settings.BOT_TOKEN)
     storage = MemoryStorage()
     dp = Dispatcher(storage=storage)
     
-    # Register admin middleware (only admins can use the bot)
+    # Admin middleware
     dp.message.middleware(AdminMiddleware())
+    dp.callback_query.middleware(AdminMiddleware())
     
     # Session middleware
     from aiogram import BaseMiddleware
@@ -78,7 +75,6 @@ async def main():
     dp.include_router(start.router)
     dp.include_router(admin.router)
     
-    # Start polling
     logger.info("Bot started, polling for updates...")
     try:
         await dp.start_polling(bot)
