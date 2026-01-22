@@ -17,11 +17,19 @@ class AdminMiddleware(BaseMiddleware):
         event: Message,
         data: Dict[str, Any],
     ) -> Any:
+        import logging
+        logger = logging.getLogger(__name__)
+        
         settings = get_settings()
         
         # Get user from message or callback
         user = getattr(event, 'from_user', None)
+        
+        logger.info(f"User: {user.id if user else None}, ADMIN_IDS: {settings.ADMIN_IDS}")
+        
         if user and user.id in settings.ADMIN_IDS:
+            logger.info(f"User {user.id} is admin, allowing")
             return await handler(event, data)
         
+        logger.info(f"User {user.id if user else None} is NOT admin, blocking")
         return None
