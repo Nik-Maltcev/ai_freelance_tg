@@ -74,11 +74,35 @@ class Settings(BaseSettings):
 
 
 def load_chats_config(config_path: str | Path = "config/chats.yaml") -> dict[str, Any]:
-    """Load chat configuration from YAML file.
+    """Load chat configuration from YAML file or crypto.txt.
 
     Returns:
         Dictionary with "chats" list and "settings".
     """
+    # Try to load from crypto.txt first
+    crypto_txt = Path("crypto.txt")
+    if crypto_txt.exists():
+        with open(crypto_txt, encoding="utf-8") as f:
+            lines = f.readlines()
+        
+        chats = []
+        for line in lines:
+            line = line.strip()
+            if line.startswith("https://t.me/"):
+                chat_id = line.replace("https://t.me/", "").strip()
+                if chat_id and chat_id not in chats:
+                    chats.append(chat_id)
+        
+        return {
+            "chats": chats,
+            "settings": {
+                "parse_days": 2,
+                "request_delay_sec": 1.5,
+                "min_message_length": 10,
+            }
+        }
+    
+    # Fallback to YAML
     path = Path(config_path)
 
     if not path.exists():
