@@ -54,13 +54,19 @@ class Settings(BaseSettings):
     def parse_admin_ids(cls, v: Any) -> list[int]:
         """Parse ADMIN_IDS from comma-separated string or list."""
         import logging
+        import os
         logger = logging.getLogger(__name__)
-        logger.info(f"Parsing ADMIN_IDS: {v} (type: {type(v)})")
         
-        if v is None:
+        # Also try to get directly from env if v is empty
+        if v is None or v == "" or v == []:
+            v = os.environ.get("ADMIN_IDS", "")
+        
+        logger.info(f"Parsing ADMIN_IDS: '{v}' (type: {type(v)})")
+        
+        if v is None or v == "":
             return []
         if isinstance(v, str):
-            v = v.strip()
+            v = v.strip().strip('"').strip("'")  # Remove quotes
             if not v:
                 return []
             result = [int(x.strip()) for x in v.split(",") if x.strip()]
